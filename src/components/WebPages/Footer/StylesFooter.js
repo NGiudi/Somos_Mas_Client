@@ -1,10 +1,10 @@
-import { BLUE, RED } from '../../../constants/colors';
+import { BG_BLACK, BLACK, BLUE, RED, WHITE } from '../../../constants/colors';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
 export const Container = styled.footer`
-  background-color: #363636;
-  color: #fafafa;
+  background-color: ${BG_BLACK};
+  color: ${WHITE};
   padding: 1.5em 0 2em 0;
 `;
 
@@ -30,14 +30,14 @@ export const Flex = styled.div`
 export const LinkDom = styled(Link)`
   display: block;
   font-family: "Truculenta", sans-serif;
-  font-size: calc(0.5em + .8vw);
+  font-size: calc(1em + .2vw);
   margin: 0px 20px;
 
   &:hover{ color: ${BLUE}; }
 `;
 
 export const Icon = styled.i`
-  color: #121212;
+  color: ${BLACK};
 
   &:hover{ color: ${RED}; }
 `;
