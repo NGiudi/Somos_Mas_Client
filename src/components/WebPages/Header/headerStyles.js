@@ -1,43 +1,46 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 import { BG_BLACK, BLUE, RED, WHITE } from '../../../constants/colors';
 
-export const NavbarWrapper = styled.nav`
-  background: #333;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  position: fixed;
-  top: 5vh;
-  bottom:0;
-  left: ${(props) => (props.open ? "0" : "-100%")};
-  width: 60%;
-  height: 100%;
-  transition: left 0.5s ease-in;
-  
-  @media only screen and (min-width: 861px) {
-    flex-direction: row;
-    position: initial;
-    height: auto;
-    justify-content: center;
-  }
-`;
-
-export const HeaderBox = styled.div`
-  align-items: center;
+export const BgColor = styled.div`
   background: ${BG_BLACK};
   border-bottom: solid 2px ${RED};
-  display: flex !important;
-  justify-content: space-around;
-  padding: 5px 50px;
   position: sticky;
-  top: 0;
+  top:0;
   width: 100%;
   z-index: 100;
 `;
 
-export const Li = styled.li`
+export const HeaderBox = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1200px;
+  padding: 5px 0px;
+  width: 95%;
+`;
+
+export const Flex = styled.div`
+  align-items: center;
+  display: flex;
+`;
+
+export const NavbarWrapper = styled.nav`
+  background: ${BG_BLACK};
+  left: ${(props) => (props.open ? "0px" : "-100%")};
+  transition: left 0.5s ease-in;
+
+  @media only screen and (max-width: 861px) {
+    padding-top: 20px;
+    min-height: calc(100vh - 72px);
+    justify-content: center;
+    position: absolute;
+    top: 72px;
+  }
+`;
+
+export const Li = styled(Link)`
   color: ${WHITE};
   display: inline-block;
   font-family: 'Truculenta', sans-serif;
@@ -45,12 +48,16 @@ export const Li = styled.li`
   list-style: none;
   padding: 0px 1em;
   
-  &:hover {
-    color: ${BLUE};
+  &:hover { color: ${BLUE}; }
+
+  @media only screen and (max-width: 861px) {
+    box-sizing: border;
+    display: block;
+    padding: 20px 70px;
   }
 `;
 
-export const Button = styled.li`
+export const Button = styled(Link)`
   border: solid 1px ${BLUE};  
   border-radius: 5px;
   color: ${BLUE};
