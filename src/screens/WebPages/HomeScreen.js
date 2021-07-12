@@ -2,7 +2,7 @@
 import React, { Fragment } from 'react';
 
 // imports from externals libraries.
-import { Text } from "@chakra-ui/react";
+import { Text } from '@chakra-ui/react';
 
 // imports from local files.
 import Footer from '../../components/WebPages/Footer/Footer';

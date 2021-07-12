@@ -1,1 +1,0 @@
-export const ROLE_ID_ADMIN = 1;

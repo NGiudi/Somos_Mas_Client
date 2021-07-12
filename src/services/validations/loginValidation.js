@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-import { INVALID_EMAIL, REQUIRED_EMAIL, REQUIRED_PASSWORD} from '../../constants/errors';
+import { INVALID_EMAIL, REQUIRED_EMAIL, REQUIRED_PASSWORD} from '../../constants/messages';
 
 // Login Verification
 export const loginValidation = yup.object().shape({
