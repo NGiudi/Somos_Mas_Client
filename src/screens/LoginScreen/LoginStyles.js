@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import { Link } from 'react-router-dom';
 import { BG_WHITE } from '../../constants/colors';
 
 export const CenterForm = styled.div`
@@ -31,12 +30,4 @@ export const Title = styled.h3`
   font-size: calc(1.4em + .5vw);
   margin: 30px 0px;
   text-align: center;
-`;
-
-export const BtnRegister = styled(Link)`
-  font-size: 12px;
-  font-style: italic;
-  cursor: pointer;
-
-  &:hover { font-weight: bolder; }
 `;
