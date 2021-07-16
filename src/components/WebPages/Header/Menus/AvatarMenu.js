@@ -9,16 +9,18 @@ import { Avatar, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 // imports from local files.
 import { logout } from '../../../../store/UserStore/UserStore';
 
+// imports constants.
+import { ROLE_ID_ADMIN } from '../../../../constants/numbers';
+
 // imports styles.
 import { ArrowDonw } from '../headerStyles';
-
-import { ROLE_ID_ADMIN } from '../../../../constants/numbers';
 
 function AvatarMenu() {
   const { roleId } = useSelector (state => state.user); 
   const dispatch = useDispatch();
 
   const closeSesion = () => {
+    localStorage.removeItem("token");
     dispatch (logout());
   }
 

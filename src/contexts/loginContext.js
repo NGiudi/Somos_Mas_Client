@@ -1,6 +1,5 @@
 // imports from react.
 import React, { createContext, useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { useQuery } from 'react-query';
 
 // import from local files.
@@ -12,9 +11,9 @@ import { ALERT_ERROR, BACKEND_CONNECTION_ERROR, LOGIN_ERROR } from '../constants
 import { HTTP_CODE_200, HTTP_CODE_400 } from '../constants/numbers';
 import { LOGIN_QUERY } from '../constants/queries';
 
-export const LoginProvider = (props) => {
-  const history = useHistory();
+export const LoginContext = createContext();
 
+export const LoginProvider = (props) => {
   const [loginFetchEnable, setLoginFetchEnable] = useState(false);
   const [loginError, setLoginError] = useState(null);
   const [userData, setUserData] = useState(null);
@@ -35,14 +34,16 @@ export const LoginProvider = (props) => {
       else if (data.status === HTTP_CODE_200) {
         localStorage.setItem ("token", data.data);
         setLoginError(null);
-        history.push('/');
+        window.location.href = '/';
       }
+      setLoginFetchEnable(false);
     }
     // query error.
-    else if (isError)
+    else if (isError){
       ToastAlert ({ icon: ALERT_ERROR, title: BACKEND_CONNECTION_ERROR });
-
-    setLoginFetchEnable(false);
+      setLoginFetchEnable(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading, loginFetchEnable]);
 
   const onSubmitLogin = async (data) => {
@@ -56,5 +57,3 @@ export const LoginProvider = (props) => {
     </LoginContext.Provider>
   );
 }
-
-export const LoginContext = createContext();

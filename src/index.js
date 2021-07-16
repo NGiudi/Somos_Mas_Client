@@ -8,21 +8,30 @@ import ReactDOM from 'react-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 
 // import from locals files.
+import { AppProvider } from './contexts/appContext';
 import store from './store/Store';
 import App from './App';
 
 // import styles.
 import './index.css';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions:{
+    queries:{
+      refetchOnWindowFocus: false
+    }
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <ChakraProvider>
-          <App/>
-        </ChakraProvider>
+        <AppProvider>
+          <ChakraProvider>
+            <App/>
+          </ChakraProvider>
+        </AppProvider>
       </QueryClientProvider>
     </Provider>
   </React.StrictMode>,

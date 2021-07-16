@@ -4,6 +4,7 @@ export const userSlice = createSlice({
   name: 'user',
   initialState: {
     id: 0,
+    nickname: "",
     lastname: "",
     imageUrl: "",
     email: "",
@@ -13,15 +14,16 @@ export const userSlice = createSlice({
   },
   reducers: {
     login: (state, action) => {
-      state.lastname = action.payload.lastname;
-      state.email = action.payload.email;
-      state.name = action.payload.name;
-      state.role = action.payload.role.role;
-      state.roleId = action.payload.roleId;
-      state.id = action.payload.id;
+      state.nickname = action.payload.nickname ?? "";
+      state.lastname = action.payload.lastname ?? "";
+      state.email = action.payload.email ?? "";
+      state.name = action.payload.name ?? "";
+      state.role = action.payload.role?.role ?? "";
+      state.roleId = action.payload.roleId ?? 0;
+      state.id = action.payload.id ?? 0;
     },
     logout: (state) => {
-      localStorage.removeItem("token");
+      state.nickname = "";
       state.lastname = "";
       state.email = "";
       state.name = "";

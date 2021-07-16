@@ -15,7 +15,7 @@ import AvatarMenu from './Menus/AvatarMenu';
 import { BgColor, Button, Flex, HeaderBox, Li, MenuButtonWrapper, NavbarWrapper } from "./headerStyles";
 
 function Header() {
-  const { roleId } = useSelector(state => state.user);
+  const { name } = useSelector(state => state.user);
   const [open, setOpen] = useState(false);
 
   const handleMenuHamburguer = () => {
@@ -49,7 +49,7 @@ function Header() {
         </Flex>
         
         { /* UserProfile */
-          roleId ? (<AvatarMenu />) : (<Button to="/login">Iniciar Sesión</Button>)
+          name !== "" ? (<AvatarMenu />) : (<Button to="/login">Iniciar Sesión</Button>)
         }
         
       </HeaderBox>
