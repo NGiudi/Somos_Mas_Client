@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { Center, IconButton, Image, Text } from '@chakra-ui/react';
 
 //imports from local files.
-import logo from '../../../assets/logo-somos-mas-blanco.png';
+import logo from '../../../assets/img/logo-somos-mas-blanco.png';
 
 // imports local styles.
 import { Container, Flex, Icon, LinkDom, Nav } from './StylesFooter';

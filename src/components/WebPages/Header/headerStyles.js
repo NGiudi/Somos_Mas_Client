@@ -32,9 +32,9 @@ export const NavbarWrapper = styled.nav`
   transition: left 0.5s ease-in;
 
   @media only screen and (max-width: 861px) {
-    padding-top: 20px;
     min-height: calc(100vh - 72px);
     justify-content: center;
+    padding-top: 20px;
     position: absolute;
     top: 72px;
   }
@@ -68,8 +68,8 @@ export const Button = styled(Link)`
   padding: .2em .5em;
 
   &:hover {
-    transform: scale(0.95);
     opacity: 0.8;
+    transform: scale(0.95);
   }
 `;
 
@@ -80,9 +80,9 @@ export const ArrowDonw = styled.i`
 
 export const MenuButtonWrapper = styled.button`
   border: none;
+  height: 5vh;
   margin-top: .3rem;
   padding: 3px;
-  height: 5vh;
   
   @media only screen and (min-width: 861px) {
     display: none;

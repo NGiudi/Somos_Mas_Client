@@ -14,13 +14,13 @@ export const userSlice = createSlice({
   },
   reducers: {
     login: (state, action) => {
-      state.nickname = action.payload.nickname ?? "";
-      state.lastname = action.payload.lastname ?? "";
-      state.email = action.payload.email ?? "";
-      state.name = action.payload.name ?? "";
-      state.role = action.payload.role?.role ?? "";
-      state.roleId = action.payload.roleId ?? 0;
-      state.id = action.payload.id ?? 0;
+      state.nickname = action.payload?.nickname ?? "";
+      state.lastname = action.payload?.lastname ?? "";
+      state.email = action.payload?.email ?? "";
+      state.name = action.payload?.name ?? "";
+      state.role = action.payload?.role?.role ?? "";
+      state.roleId = action.payload?.roleId ?? 0;
+      state.id = action.payload?.id ?? 0;
     },
     logout: (state) => {
       state.nickname = "";

@@ -10,7 +10,7 @@ import { BgWhite, CenterForm, LogoContainer, Title } from './LoginStyles';
 import LoginError from '../../components/Login/LoginError/LoginError';
 import LoginForm from '../../components/Login/LoginForm/LoginForm';
 import { LoginProvider } from '../../contexts/loginContext';
-import logo from '../../assets/logo-somos-mas.png';
+import logo from '../../assets/img/logo-somos-mas.png';
 
 // Export Component
 function LoginScreen() {

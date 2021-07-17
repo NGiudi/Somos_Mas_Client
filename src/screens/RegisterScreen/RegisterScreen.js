@@ -10,7 +10,7 @@ import { Field, Formik, Form } from 'formik';
 // imports from local files.
 import { BgWhite, CenterForm, LogoContainer, Title } from './RegisterStyles';
 import { registerValidation } from '../../services/validations/registerValidation';
-import logo from '../../assets/logo-somos-mas.png';
+import logo from '../../assets/img/logo-somos-mas.png';
 
 // imports constants.
 import { BTN_REGISTER } from '../../constants/buttons';

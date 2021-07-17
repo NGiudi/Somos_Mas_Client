@@ -8,7 +8,7 @@ import { HamburgerIcon, SmallCloseIcon } from '@chakra-ui/icons';
 import { Image } from '@chakra-ui/react';
 
 // imports from local files.
-import logo from '../../../assets/logo-somos-mas-blanco.png';
+import logo from '../../../assets/img/logo-somos-mas-blanco.png';
 import AvatarMenu from './Menus/AvatarMenu';
 
 // import styles.

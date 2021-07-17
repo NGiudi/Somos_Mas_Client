@@ -30,7 +30,6 @@ export function AppProvider(props) {
     const storageToken = localStorage.getItem("token");
 
     if (storageToken) {
-      console.log ("hago el query.");
       setToken(storageToken);
       setFetchUser(true);
     }
@@ -38,7 +37,6 @@ export function AppProvider(props) {
 
   useEffect(() => {
     if (isSuccess) {
-      console.log(data.data);
       dispatch(login(data.data));
     }
     else if (isError) {
