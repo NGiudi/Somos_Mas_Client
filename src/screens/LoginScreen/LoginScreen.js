@@ -26,9 +26,7 @@ function LoginScreen() {
           </LogoContainer>
 
           <Title>Iniciar Sesión</Title>
-
           <LoginError/>
-
           <LoginForm />
         </BgWhite>
       </CenterForm>

@@ -5,23 +5,23 @@ import React, { useContext } from 'react';
 import { Alert, AlertIcon } from '@chakra-ui/react';
 
 // imports from locals files.
-import { LoginContext } from '../../../contexts/loginContext';
-import { AlertBox } from './LoginErrorStyles';
+import { RegisterContext } from '../../../contexts/registerContext';
+import { AlertBox } from './RegisterErrorStyles';
 
-function LoginError() {
-  const { loginError } = useContext(LoginContext);
+function RegisterError() {
+  const { registerError } = useContext(RegisterContext);
 
-  if (loginError === null)
+  if (registerError === null)
     return null;
 
   return (
     <AlertBox>
       <Alert status="error" variant="left-accent">
         <AlertIcon />
-          {loginError}
+          {registerError}
       </Alert>
     </AlertBox>
   );
 }
 
-export default LoginError;
+export default RegisterError;

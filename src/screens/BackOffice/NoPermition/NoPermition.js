@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@chakra-ui/react';
 
 // improt from local files.
-import LottieComponent from '../../../components/LottieComponent/LottieComponent';
+import LottieComponent from '../../../components/WebPages/LottieComponent/LottieComponent';
 import Header from '../../../components/WebPages/Header/Header';
 import Footer from '../../../components/WebPages/Footer/Footer';
 

@@ -8,6 +8,7 @@ export const INVALID_PASSWORD = "La contraseña debe ser de al menos 6 caractere
 export const INVALID_LENGHT_20 = "No se puede superar los 20 caracteres." 
 export const INVALID_EMAIL = "Email inválido.";
 
+export const REGISTER_ERROR = "Existe un usuario registrado con este mail.";
 export const LOGIN_ERROR = "Email o contraseña incorrecta.";
 
 export const BACKEND_CONNECTION_ERROR = "Error de conexión. Intente nuevamente más tarde.";

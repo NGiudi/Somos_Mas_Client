@@ -32,7 +32,7 @@ export const LoginProvider = (props) => {
         setLoginError(LOGIN_ERROR);
       // login success.
       else if (data.status === HTTP_CODE_200) {
-        localStorage.setItem ("token", data.data);
+        localStorage.setItem("token", data.data);
         setLoginError(null);
         window.location.href = '/';
       }

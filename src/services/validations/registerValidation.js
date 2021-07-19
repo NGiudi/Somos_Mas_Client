@@ -5,11 +5,11 @@ import { INVALID_EMAIL, INVALID_LENGHT_20, INVALID_PASSWORD } from '../../consta
 import { MAX_LENGTH_20, MIN_LENGTH_6 } from '../../constants/numbers';
 
 export const registerValidation = yup.object({
-  firstName: yup.string()
+  name: yup.string()
     .max(MAX_LENGTH_20, INVALID_LENGHT_20)
     .required(REQUIRED_NAME),
   
-  lastName: yup.string()
+  lastname: yup.string()
     .max(MAX_LENGTH_20, INVALID_LENGHT_20)
     .required(REQUIRED_LAST_NAME),
   
