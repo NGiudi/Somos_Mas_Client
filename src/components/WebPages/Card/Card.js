@@ -1,33 +1,38 @@
 // imports from react
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // import from externals libraries.
-import { Badge, Box, Image } from '@chakra-ui/react';
+import { Badge, Box, Button, Image } from '@chakra-ui/react';
 
 //import styles
-import { Content, Title } from './CardStyles';
+import { Content, Footer, Title } from './CardStyles';
 
 function Card({ data }) {
 
   if (!data)
     return <h5> error </h5>
 
-  const { altImage, category, date, imageUrl, title, text } = data;
+  const { category, content, date, id, imageAlt, imageURL, title } = data;
 
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" m="auto">
-      <Image src={imageUrl} alt={altImage} />
+      <Image src={imageURL} alt={imageAlt} />
 
       <Box p="6">
         <Badge borderRadius="full" px="2" colorScheme="yellow">
-          {category}
+          {category.name}
         </Badge>
 
-        <Title> { title } </Title>
+        <Title>{ title }</Title>
+        <Content>{ content }</Content>
+        <Footer>{ date }</Footer>
 
-        <Content> { text } </Content>
-
-        <Box as="span" ml="2" color="gray.600" fontSize="sm"> { date } </Box>
+        <Box mt="1rem" textAlign="right">
+          <Link to={`/news/${id}`}>
+            <Button variant="outline">Leer Articulo</Button>
+          </Link>
+        </Box>
       </Box>
     </Box>
   );

@@ -1,6 +1,7 @@
 // imports from react.
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { useQuery } from 'react-query';
 
 // imports from externals libraries.
 import { Button, Center, Text } from '@chakra-ui/react';
@@ -10,46 +11,27 @@ import Footer from '../../../components/WebPages/Footer/Footer';
 import Header from '../../../components/WebPages/Header/Header';
 import Card from '../../../components/WebPages/Card/Card';
 
+// import services
+import { getHomeData } from '../../../services/axios/queries/home';
+
 // imports styles
 import { Grid, Rectangular, Section, SectionTitle } from './HomeStyles';
 
-const cards = [
-  { 
-    altImage: "foto de george russel",
-    category: "formula 1",
-    date: "hace 2 semanas", 
-    imageUrl: "https://cdn-9.motorsport.com/images/mgl/2eA4BKp2/s8/george-russell-williams-1.jpg",  
-    title: "La vida de George Russel", 
-    text: "este primer contenido habla acerca de la carrera profesional de russel en la formula 1. Se espera un excelente futuro para este piloto que cada día destaca más." 
-  },
-  { 
-    altImage: "foto de george russel",
-    category: "formula 1",
-    date: "hace 2 semanas", 
-    imageUrl: "https://cdn-9.motorsport.com/images/mgl/2eA4BKp2/s8/george-russell-williams-1.jpg",  
-    title: "La vida de George Russel", 
-    text: "este primer contenido habla acerca de la carrera profesional de russel en la formula 1. Se espera un excelente futuro para este piloto que cada día destaca más." 
-  },
-  { 
-    altImage: "foto de george russel",
-    category: "formula 1",
-    date: "hace 2 semanas", 
-    imageUrl: "https://cdn-9.motorsport.com/images/mgl/2eA4BKp2/s8/george-russell-williams-1.jpg",  
-    title: "La vida de George Russel", 
-    text: "este primer contenido habla acerca de la carrera profesional de russel en la formula 1. Se espera un excelente futuro para este piloto que cada día destaca más." 
-  },
-  { 
-    altImage: "foto de george russel",
-    category: "formula 1",
-    date: "hace 2 semanas", 
-    imageUrl: "https://cdn-9.motorsport.com/images/mgl/2eA4BKp2/s8/george-russell-williams-1.jpg",  
-    title: "La vida de George Russel", 
-    text: "este primer contenido habla acerca de la carrera profesional de russel en la formula 1. Se espera un excelente futuro para este piloto que cada día destaca más." 
-  }
-];
-
 const Home = () => {
-  
+  const { isLoading, isError, data } = useQuery('homeData', getHomeData);
+
+  if (isLoading) {
+    return (
+      <h1>Loading...</h1>
+    );
+  }
+
+  if (isError) {
+    return (
+      <h1>Error</h1>
+    );
+  }
+
   return (
     <Fragment>
       <Header />
@@ -68,10 +50,11 @@ const Home = () => {
         <Rectangular/>
 
         <Grid>
-          { cards.map (card => {
-            return (
-              <Card data={card}/>
-            );
+          { data.news.map(card => {
+              console.log(card);
+              return (
+                <Card data={card} key={card.id}/>
+              );
           })}
         </Grid>
 
