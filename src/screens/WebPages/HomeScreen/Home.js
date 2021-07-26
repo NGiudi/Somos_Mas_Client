@@ -15,6 +15,7 @@ import PageLayout from '../PageLayout';
 import { getHomeData } from '../../../services/axios/queries/home';
 
 // import constants.
+import { HTTP_CODE_204, HTTP_CODE_500 } from '../../../constants/numbers';
 import { HOME_QUERY } from '../../../constants/queries';
 
 const Home = () => {
@@ -23,7 +24,7 @@ const Home = () => {
   if (isLoading)
     return <h1>Loading...</h1>
 
-  if (isError)
+  if (isError || data.status === HTTP_CODE_500)
     return <h1>Error</h1>
 
   return (
@@ -41,20 +42,26 @@ const Home = () => {
       <Section>
         <SectionTitle>Novedades</SectionTitle>
         <Rectangular/>
-
-        <Grid>
-          { data.news.map(card => {
-              return (
-                <Card data={card} key={card.id}/>
-              );
-          })}
-        </Grid>
-
-        <Center mt="3rem">
-          <Link to="/news">
-            <Button>Ver más noticias</Button>
-          </Link>
-        </Center>
+        
+        { /* news section */
+          data.status !== HTTP_CODE_204 ? (
+            <Grid>
+              { data.news.map(card => {
+                  return (
+                    <>
+                      <Card data={card} key={card.id}/>
+                      <Center mt="3rem">
+                        <Link to="/news">
+                          <Button>Ver más noticias</Button>
+                        </Link>
+                      </Center>
+                    </>
+                  );
+              })}
+            </Grid>
+        ) : (
+          <h1>No data</h1>
+        )}
       </Section>
 
       {/* testimonials */}

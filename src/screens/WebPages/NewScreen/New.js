@@ -26,16 +26,11 @@ function NewScreen() {
   if (isLoading)
     return <h1>Loading...</h1>
 
-  if (isError)
+  if (isError || data.status === HTTP_CODE_500)
     return <h1>Error</h1>
 
   if (data.status === HTTP_CODE_204)
     return <h1>La moticia que quiere acceder no existe</h1>
-
-  if (data.status === HTTP_CODE_500)
-    return <h1>No se pudo encontrar el contendio de la pagina. Lo sentimos</h1>
-
-  console.log(data);
   
   return (
     <PageLayout>

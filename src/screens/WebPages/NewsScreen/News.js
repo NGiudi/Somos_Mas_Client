@@ -15,6 +15,7 @@ import PageLayout from '../PageLayout';
 import { getNewsData } from '../../../services/axios/queries/news'; 
 
 // import constants.
+import { HTTP_CODE_204, HTTP_CODE_500 } from '../../../constants/numbers';
 import { NEWS_QUERY } from '../../../constants/queries';
 
 function News() {
@@ -30,9 +31,12 @@ function News() {
     return <h1>loading...</h1>
   }
 
-  if (query.isError) {
+  if (query.isError || query.data.status === HTTP_CODE_500) {
     return <h1>Error</h1>
   }
+
+  if (query.data.status === HTTP_CODE_204)
+    return <h1>Pantalla sin datos</h1>
 
   const onChangePage = selected => setPage(selected);
 
