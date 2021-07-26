@@ -1,16 +1,16 @@
-// imports from react.
+// import from react.
 import React, { useContext } from 'react';
 
-// imports from externals libraries.
+// import from external libraries.
 import { FormControl, FormLabel, FormErrorMessage } from '@chakra-ui/react';
 import { Box, Button, Center, Input } from '@chakra-ui/react';
 import { Field, Formik, Form } from 'formik';
 
-// imports from local files.
+// import from local files.
 import { registerValidation } from '../../../services/validations/registerValidation';
 import { RegisterContext } from '../../../contexts/registerContext';
 
-// imports constants.
+// import constants.
 import { BTN_REGISTER } from '../../../constants/buttons';
 import { BLUE } from '../../../constants/colors';
 
@@ -30,7 +30,7 @@ function RegisterForm() {
               <FormControl isInvalid={touched[field.name] && errors[field.name]}>
                 <FormLabel htmlFor="name" mb="0px">Nombre*</FormLabel>
                 <Input {...field} type="text" name='name' placeholder="Ingrese su nombre..." variant="flushed"/>
-                <FormErrorMessage>{errors[field.name]}</FormErrorMessage>
+                <FormErrorMessage>{ errors[field.name] }</FormErrorMessage>
               </FormControl>
             </Box>
           )}
@@ -42,7 +42,7 @@ function RegisterForm() {
               <FormControl isInvalid={touched[field.name] && errors[field.name]}>
                 <FormLabel htmlFor="lastname" mb="0px">Apellido*</FormLabel>
                 <Input {...field} type="text" name='lastname' placeholder="Ingrese su apellido..." variant="flushed"/>
-                <FormErrorMessage>{errors[field.name]}</FormErrorMessage>
+                <FormErrorMessage>{ errors[field.name] }</FormErrorMessage>
               </FormControl>
             </Box>
           )}
@@ -54,7 +54,7 @@ function RegisterForm() {
               <FormControl isInvalid={touched[field.name] && errors[field.name]}>
                 <FormLabel htmlFor="email" mb="0px">Email*</FormLabel>
                 <Input {...field} type="text" name='email' placeholder="Ingrese su email..." variant="flushed"/>
-                <FormErrorMessage>{errors[field.name]}</FormErrorMessage>
+                <FormErrorMessage>{ errors[field.name] }</FormErrorMessage>
               </FormControl>
             </Box>
           )}
@@ -66,7 +66,7 @@ function RegisterForm() {
               <FormControl isInvalid={touched[field.name] && errors[field.name]}>
                 <FormLabel htmlFor="password" mb="0px">Contraseña*</FormLabel>
                 <Input {...field} type="password" name='password' placeholder="Ingrese su contraseña..." variant="flushed"/>
-                <FormErrorMessage>{errors[field.name]}</FormErrorMessage>
+                <FormErrorMessage>{ errors[field.name] }</FormErrorMessage>
               </FormControl>
             </Box>
           )}

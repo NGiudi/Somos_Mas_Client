@@ -1,37 +1,36 @@
-// imports from react. 
+// import from react. 
 import React, { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-// imports from external libraries.
+// import from external libraries.
 import { HamburgerIcon, SmallCloseIcon } from '@chakra-ui/icons';
 import { Image } from '@chakra-ui/react';
 
-// imports from local files.
+// import from local files.
+import { BgColor, Button, Flex, HeaderBox, Li, MenuButtonWrapper, NavbarWrapper } from "./headerStyles";
 import logo from '../../../assets/img/logo-somos-mas-blanco.png';
 import AvatarMenu from './Menus/AvatarMenu';
 
-// import styles.
-import { BgColor, Button, Flex, HeaderBox, Li, MenuButtonWrapper, NavbarWrapper } from "./headerStyles";
+// import constants.
+import { WHITE } from '../../../constants/colors';
 
 function Header() {
   const { name } = useSelector(state => state.user);
   const [open, setOpen] = useState(false);
 
-  const handleMenuHamburguer = () => {
-    setOpen(!open);
-  }
+  const handleMenuHamburguer = () => setOpen(!open);
 
   return (
     <BgColor>
       <HeaderBox>
         {!open ? (
           <MenuButtonWrapper onClick={handleMenuHamburguer}>
-            <HamburgerIcon w={7} h={7} color="#FFF" />
+            <HamburgerIcon w={7} h={7} color={ WHITE } />
           </MenuButtonWrapper>
         ) : (
           <MenuButtonWrapper onClick={handleMenuHamburguer}>
-            <SmallCloseIcon w={7} h={7} color="#FFF" />
+            <SmallCloseIcon w={7} h={7} color={ WHITE } />
           </MenuButtonWrapper>
         )}
         

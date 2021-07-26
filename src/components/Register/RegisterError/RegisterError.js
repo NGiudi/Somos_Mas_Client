@@ -1,10 +1,10 @@
-// imports react.
+// import from react.
 import React, { useContext } from 'react';
 
-// import externals libraries.
+// import from external libraries.
 import { Alert, AlertIcon } from '@chakra-ui/react';
 
-// imports from locals files.
+// imports from local files.
 import { RegisterContext } from '../../../contexts/registerContext';
 import { AlertBox } from './RegisterErrorStyles';
 
@@ -18,7 +18,7 @@ function RegisterError() {
     <AlertBox>
       <Alert status="error" variant="left-accent">
         <AlertIcon />
-          {registerError}
+          { registerError }
       </Alert>
     </AlertBox>
   );

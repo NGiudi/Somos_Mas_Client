@@ -4,14 +4,16 @@ import RegisterScreen from './screens/RegisterScreen/RegisterScreen';
 import BackofficeScreen from './screens/BackOffice/Backoffice';
 import LoginScreen from './screens/LoginScreen/LoginScreen';
 import HomeScreen from './screens/WebPages/HomeScreen/Home';
-import NewScreen from './screens/WebPages/NewsScreen/News';
+import NewsScreen from './screens/WebPages/NewsScreen/News';
+import NewScreen from './screens/WebPages/NewScreen/New';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={HomeScreen} />
-        <Route exact path="/news" component={NewScreen} />
+        <Route exact path="/news" component={NewsScreen} />
+        <Route exact path="/news/:id" component={NewScreen} />
         <Route exact path="/login" component={LoginScreen} />
         <Route exact path="/register" component={RegisterScreen} />
         <Route exact path="/backoffice" component={BackofficeScreen} />

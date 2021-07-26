@@ -1,6 +1,8 @@
-import { BG_BLACK, BLACK, BLUE, RED, WHITE } from '../../../constants/colors';
-import { Link } from 'react-router-dom';
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
+
+// import constants.
+import { BG_BLACK, BLACK, BLUE, RED, WHITE } from '../../../constants/colors';
 
 export const Container = styled.footer`
   background-color: ${BG_BLACK};

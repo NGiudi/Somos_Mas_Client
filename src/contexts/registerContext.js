@@ -27,19 +27,20 @@ export function RegisterProvider (props) {
   
   useEffect(() => {
     if (isSuccess) {
-      console.log (data);
+      if (data.status === HTTP_CODE_400) {
+        // invalid data.
+        setRegisterError(REGISTER_ERROR);
+      }
       if (data.status === HTTP_CODE_200) {
+        // success register.
         localStorage.setItem("token", data.data);
         setRegisterError(null);
         window.location.href = '/';
       }
-      if (data.status === HTTP_CODE_400) {
-        setRegisterError(REGISTER_ERROR);
-      }
       setRegisterFetchEnable(false);
     }
-    // query error.
     else if (isError) {
+      // query error.
       ToastAlert ({ icon: ALERT_ERROR, title: BACKEND_CONNECTION_ERROR });
       setRegisterFetchEnable(false);
     }

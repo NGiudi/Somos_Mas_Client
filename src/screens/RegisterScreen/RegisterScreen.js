@@ -1,11 +1,11 @@
-// imports from react.
+// import from react.
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// imports from externals libraries.
+// import from external libraries.
 import { Image } from '@chakra-ui/react';
 
-// imports from local files.
+// import from local files.
 import RegisterError from '../../components/Register/RegisterError/RegisterError';
 import RegisterForm from '../../components/Register/RegisterForm/RegisterForm';
 import { BgWhite, CenterForm, LogoContainer, Title } from './RegisterStyles';
@@ -13,7 +13,6 @@ import { RegisterProvider } from '../../contexts/registerContext';
 import logo from '../../assets/img/logo-somos-mas.png';
 
 function RegisterScreen() {
-
   return (
     <RegisterProvider>
       <CenterForm>

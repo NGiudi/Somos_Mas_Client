@@ -1,21 +1,18 @@
-// imports from react.
-import React, { Fragment } from 'react';
+// import from react.
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
 
-// imports from externals libraries.
+// import from external libraries.
 import { Button, Center, Text } from '@chakra-ui/react';
 
-// imports from local files.
-import Footer from '../../../components/WebPages/Footer/Footer';
-import Header from '../../../components/WebPages/Header/Header';
-import Card from '../../../components/WebPages/Card/Card';
-
-// import services
-import { getHomeData } from '../../../services/axios/queries/home';
-
-// imports styles
+// import from local files.
 import { Grid, Rectangular, Section, SectionTitle } from './HomeStyles';
+import Card from '../../../components/WebPages/Card/Card';
+import PageLayout from '../PageLayout';
+
+// import services.
+import { getHomeData } from '../../../services/axios/queries/home';
 
 // import constants.
 import { HOME_QUERY } from '../../../constants/queries';
@@ -23,22 +20,15 @@ import { HOME_QUERY } from '../../../constants/queries';
 const Home = () => {
   const { isLoading, isError, data } = useQuery(HOME_QUERY, getHomeData);
 
-  if (isLoading) {
-    return (
-      <h1>Loading...</h1>
-    );
-  }
+  if (isLoading)
+    return <h1>Loading...</h1>
 
-  if (isError) {
-    return (
-      <h1>Error</h1>
-    );
-  }
+  if (isError)
+    return <h1>Error</h1>
 
   return (
-    <Fragment>
-      <Header />
-
+    <PageLayout>
+      {/* welcome text */}
       <Section>
         <Text m="auto" maxW="1000px" w="70%" mt="6rem" as="h1" fontSize="2xl" textAlign="center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -47,14 +37,13 @@ const Home = () => {
         </Text>
       </Section>
       
-      {/* Last News */}
+      {/* last news. */}
       <Section>
         <SectionTitle>Novedades</SectionTitle>
         <Rectangular/>
 
         <Grid>
           { data.news.map(card => {
-              console.log(card);
               return (
                 <Card data={card} key={card.id}/>
               );
@@ -68,14 +57,12 @@ const Home = () => {
         </Center>
       </Section>
 
-      {/* Testimonials */}
+      {/* testimonials */}
       <Section>
         <SectionTitle>Testimonios</SectionTitle>
         <Rectangular/>
       </Section>
-      
-      <Footer />
-    </Fragment>
+    </PageLayout>
   )
 }
 

@@ -1,35 +1,34 @@
-// imports from react.
+// import from react.
 import React, { Fragment } from 'react';
 
-// imports fron external libraries.
+// import fron external libraries.
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { Button } from '@chakra-ui/react';
 
 // import constants.
-import { MAX_PAGES } from '../../constants/numbers';
+import { MAX_PAGES_PAGINATION } from '../../constants/numbers';
 import { RED, WHITE } from '../../constants/colors';
 
-
-function Pagination({ pages, page, onChangePage }) {
-  let listPages = [];
-
-  let start=1;
-
-  if (pages > MAX_PAGES) {
-    if (page > MAX_PAGES/2)
-      start = page - Math.floor(MAX_PAGES/2);
-    if (pages-page < Math.floor(MAX_PAGES/2))
-      start -= Math.floor(MAX_PAGES/2) - pages + page;
+function Pagination({ page, pages, onChangePage }) {
+  const centerValue = Math.floor(MAX_PAGES_PAGINATION/2);
+  const rightNumbers = pages - page;  
+  let  start = 1, listPages = [];
+  
+  if (pages > MAX_PAGES_PAGINATION) {
+    if (page > MAX_PAGES_PAGINATION/2)
+      start = page - centerValue;
+    if (rightNumbers < centerValue)
+      start -= centerValue - rightNumbers;
   }
   
   for (let i = start; i <= pages; i++) {
-    if (i === start + MAX_PAGES) break;
+    if (i === start + MAX_PAGES_PAGINATION) break;
 
     listPages.push(i);
   }
 
   /* cambio de la pagina */
-  const SetNumberPage = (number) => onChangePage(number);
+  const SetNumberPage = number => onChangePage(number);
   const PreviusPage = () => onChangePage(page - 1);
   const NextPage = () => onChangePage(page + 1);
 

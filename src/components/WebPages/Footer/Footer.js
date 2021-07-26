@@ -1,15 +1,13 @@
-// imports from react.
+// import from react.
 import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 
-// imports externals libraries.
+// import from externals libraries.
 import { Center, IconButton, Image, Text } from '@chakra-ui/react';
 
-//imports from local files.
-import logo from '../../../assets/img/logo-somos-mas-blanco.png';
-
-// imports local styles.
+//import from local files.
 import { Container, Flex, Icon, LinkDom, Nav } from './StylesFooter';
+import logo from '../../../assets/img/logo-somos-mas-blanco.png';
 
 const Footer = () => {
   const { facebook, instagram, linkedin } = useSelector((state) => state.organization);

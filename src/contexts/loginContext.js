@@ -1,4 +1,4 @@
-// imports from react.
+// import from react.
 import React, { createContext, useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 
@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 import { loginUser } from '../services/axios/queries/login';
 import { ToastAlert } from '../services/alerts/alerts';
 
-// imports constants
+// import constants.
 import { ALERT_ERROR, BACKEND_CONNECTION_ERROR, LOGIN_ERROR } from '../constants/messages';
 import { HTTP_CODE_200, HTTP_CODE_400 } from '../constants/numbers';
 import { LOGIN_QUERY } from '../constants/queries';
@@ -19,27 +19,27 @@ export const LoginProvider = (props) => {
   const [userData, setUserData] = useState(null);
   
   const querySettings = {
-    enabled: loginFetchEnable,
+    enabled: loginFetchEnable
   }
 
-  // queries.
   const {isLoading, isSuccess, isError, data} = useQuery([LOGIN_QUERY, userData], () => loginUser(userData), querySettings);
   
   useEffect(() => {
     if (isSuccess) {
-      // password or email invalid.
-      if (data.status === HTTP_CODE_400)
+      if (data.status === HTTP_CODE_400) {
+        // password or email invalid.
         setLoginError(LOGIN_ERROR);
-      // login success.
+      }
       else if (data.status === HTTP_CODE_200) {
+        // login success.
         localStorage.setItem("token", data.data);
         setLoginError(null);
         window.location.href = '/';
       }
       setLoginFetchEnable(false);
     }
-    // query error.
     else if (isError){
+      // query error.
       ToastAlert ({ icon: ALERT_ERROR, title: BACKEND_CONNECTION_ERROR });
       setLoginFetchEnable(false);
     }

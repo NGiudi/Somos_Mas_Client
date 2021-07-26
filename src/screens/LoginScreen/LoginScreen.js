@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// import externals libraries.
+// import from external libraries.
 import { Image } from '@chakra-ui/react';
 
 // import from local files.
@@ -12,9 +12,7 @@ import LoginForm from '../../components/Login/LoginForm/LoginForm';
 import { LoginProvider } from '../../contexts/loginContext';
 import logo from '../../assets/img/logo-somos-mas.png';
 
-// Export Component
 function LoginScreen() {
-
   return (
     <LoginProvider>
       <CenterForm>

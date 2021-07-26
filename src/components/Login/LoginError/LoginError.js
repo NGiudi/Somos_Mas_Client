@@ -1,10 +1,10 @@
-// imports react.
+// import from react.
 import React, { useContext } from 'react';
 
-// import externals libraries.
+// import from externals libraries.
 import { Alert, AlertIcon } from '@chakra-ui/react';
 
-// imports from locals files.
+// import from local files.
 import { LoginContext } from '../../../contexts/loginContext';
 import { AlertBox } from './LoginErrorStyles';
 

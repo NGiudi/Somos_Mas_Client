@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+
+// import constants.
 import { BG_BLACK, BLUE, RED, WHITE } from '../../../constants/colors';
 
 export const BgColor = styled.div`

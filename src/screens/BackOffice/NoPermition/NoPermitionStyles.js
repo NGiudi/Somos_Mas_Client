@@ -11,18 +11,6 @@ export const Content = styled.div`
   }
 `;
 
-export const Title = styled.h2`
-  font-family: 'Truculenta', sans-serif;
-  font-size: 50px;
-  margin-bottom: 20px;
-`;
-
-export const Message = styled.p`
-  font-size: 20px;
-  margin-bottom: 50px;
-  text-align: center;
-`;
-
 export const Image = styled.div`
   text-align: center;
   width: 30%;
@@ -44,4 +32,16 @@ export const TextBox = styled.div`
     padding: 60px 0px;
     width: 80%;
   }
+`;
+
+export const Title = styled.h2`
+  font-family: 'Truculenta', sans-serif;
+  font-size: 50px;
+  margin-bottom: 20px;
+`;
+
+export const Message = styled.p`
+  font-size: 20px;
+  margin-bottom: 50px;
+  text-align: center;
 `;

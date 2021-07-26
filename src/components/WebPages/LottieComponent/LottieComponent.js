@@ -1,7 +1,7 @@
-// imports from react.
+// import from react.
 import React from 'react';
 
-// imports from externals libraries.
+// import from external libraries.
 import Lottie from 'react-lottie';
 
 const defaultOptions = {

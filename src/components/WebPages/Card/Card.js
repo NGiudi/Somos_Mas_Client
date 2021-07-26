@@ -1,11 +1,12 @@
-// imports from react
+// import from react.
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// import from externals libraries.
+// import from external libraries.
 import { Badge, Box, Button, Image } from '@chakra-ui/react';
+import parse from 'html-react-parser';
 
-//import styles
+//import from local files.
 import { Content, Footer, Title } from './CardStyles';
 
 function Card({ data }) {
@@ -25,7 +26,7 @@ function Card({ data }) {
         </Badge>
 
         <Title>{ title }</Title>
-        <Content>{ content }</Content>
+        <Content>{ parse(content) }</Content>
         <Footer>Creado el: { date }</Footer>
 
         <Box mt="1rem" textAlign="right">
