@@ -21,6 +21,10 @@ La navegación se adapta según el tamaño del dispositivo. Si abrimos la págin
 
 Si el usuario no cierra su cuenta al cerrar el navegador, cuando ingrese nuevamente seguirá con su cuenta abierta. Para lograr esto se guarda un token que al ingresar se verifica y si es correcto se abre la sesión del usuario.
 
+### Pagiación
+
+Se ha diseñado una paginación con la intención de mejorar la experiencia del usuario y el desempeño de la página. Imaginate si tuvieramos que cargar mucha información, el proceso se volvería lento y engorroso.
+
 ## Servidor
 
 Em este repositorio se encuentra subida la parte del cliente, para ver la parte del servidor debe dirigirse al siguiente repositorio:
