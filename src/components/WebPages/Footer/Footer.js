@@ -1,5 +1,5 @@
 // imports from react.
-import React from 'react';
+import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 
 // imports externals libraries.
@@ -71,4 +71,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

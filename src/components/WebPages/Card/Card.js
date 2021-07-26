@@ -26,7 +26,7 @@ function Card({ data }) {
 
         <Title>{ title }</Title>
         <Content>{ content }</Content>
-        <Footer>{ date }</Footer>
+        <Footer>Creado el: { date }</Footer>
 
         <Box mt="1rem" textAlign="right">
           <Link to={`/news/${id}`}>

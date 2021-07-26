@@ -17,8 +17,11 @@ import { getHomeData } from '../../../services/axios/queries/home';
 // imports styles
 import { Grid, Rectangular, Section, SectionTitle } from './HomeStyles';
 
+// import constants.
+import { HOME_QUERY } from '../../../constants/queries';
+
 const Home = () => {
-  const { isLoading, isError, data } = useQuery('homeData', getHomeData);
+  const { isLoading, isError, data } = useQuery(HOME_QUERY, getHomeData);
 
   if (isLoading) {
     return (

@@ -1,5 +1,5 @@
 // imports from react. 
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -57,4 +57,4 @@ function Header() {
   );
 }
 
-export default Header
+export default memo(Header);
