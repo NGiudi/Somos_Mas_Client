@@ -9,9 +9,9 @@ const organizationSlice = createSlice({
   },
   reducers: {
     setOrganization: (state, action) => {
-      state.instragram = action.payload.instragram;
-      state.linkedin = action.payload.linkedin;
-      state.facebook = action.payload.facebook;
+      state.instagram = action.payload?.instagramURL?? "https://www.instagram.com/";
+      state.linkedin = action.payload?.linkedinURL?? "https://www.linkedin.com/";
+      state.facebook = action.payload?.facebookURL?? "https://www.facebook.com/";
     },
   }
 });
