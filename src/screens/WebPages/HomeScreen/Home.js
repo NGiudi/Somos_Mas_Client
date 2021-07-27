@@ -45,20 +45,21 @@ const Home = () => {
         
         { /* news section */
           data.status !== HTTP_CODE_204 ? (
-            <Grid>
-              { data.news.map(card => {
-                  return (
-                    <>
+            <>
+              <Grid>
+                { data.news.map(card => {
+                    return (
                       <Card data={card} key={card.id}/>
-                      <Center mt="3rem">
-                        <Link to="/news">
-                          <Button>Ver más noticias</Button>
-                        </Link>
-                      </Center>
-                    </>
-                  );
-              })}
-            </Grid>
+                    );
+                })}
+              </Grid>
+
+              <Center mt="3rem">
+                <Link to="/news">
+                  <Button>Ver más noticias</Button>
+                </Link>
+              </Center>
+            </>
         ) : (
           <h1>No data</h1>
         )}
