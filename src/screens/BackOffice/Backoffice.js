@@ -1,10 +1,12 @@
-// imports from react.
+// import from react.
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import NoPermition from './NoPermition/NoPermition';
+// import local files.
+import MessagePage from '../WebPages/MessagePage/MessagePage';
 
-// imports constants.
+// import constants.
+import { BACKOFFICE_NO_PERMITION } from '../../constants/messagesPages';
 import { ROLE_ID_ADMIN } from '../../constants/numbers';
 
 function Backoffice() {
@@ -21,7 +23,7 @@ function Backoffice() {
     return null
 
   if (roleId !== ROLE_ID_ADMIN)
-    return ( <NoPermition /> );
+    return ( <MessagePage data={BACKOFFICE_NO_PERMITION}/> );
   
   return (
     <p>estoy dentro</p>

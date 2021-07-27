@@ -30,7 +30,7 @@ function NewScreen() {
     return <h1>Error</h1>
 
   if (data.status === HTTP_CODE_204)
-    return <h1>La moticia que quiere acceder no existe</h1>
+    return <h1>La noticia que quiere acceder no existe</h1>
   
   return (
     <PageLayout>

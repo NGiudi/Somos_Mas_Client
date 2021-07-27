@@ -11,7 +11,6 @@ import { registerValidation } from '../../../services/validations/registerValida
 import { RegisterContext } from '../../../contexts/registerContext';
 
 // import constants.
-import { BTN_REGISTER } from '../../../constants/buttons';
 import { BLUE } from '../../../constants/colors';
 
 function RegisterForm() { 
@@ -74,7 +73,7 @@ function RegisterForm() {
 
         <Center pt="20px" mb="40px">
           <Button isLoading={registerFetchEnable} colorScheme="blue" color={BLUE} variant="outline" type="submit">
-            { BTN_REGISTER }
+            Registrarse
           </Button>
         </Center>
       </Form>

@@ -12,7 +12,6 @@ import { LoginContext } from '../../../contexts/loginContext';
 import { BtnRegister } from './LoginFormStyles';
 
 // import constants.
-import { BTN_LOGIN } from '../../../constants/buttons';
 import { BLUE } from '../../../constants/colors';
 
 export default function LoginForm() {
@@ -53,7 +52,7 @@ export default function LoginForm() {
 
         <Center py="20px">
           <Button isLoading={loginFetchEnable} colorScheme="blue" color={BLUE} variant="outline" type="submit">
-            { BTN_LOGIN }
+            Ingresar
           </Button>
         </Center>
       </Form>
