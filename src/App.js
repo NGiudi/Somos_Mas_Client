@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useQuery } from 'react-query';
 
 // import local files.
+import AboutUsScreen from './screens/WebPages/AboutUsScreen/AboutUs';
 import RegisterScreen from './screens/RegisterScreen/RegisterScreen';
 import BackofficeScreen from './screens/BackOffice/Backoffice';
 import LoginScreen from './screens/LoginScreen/LoginScreen';
@@ -32,11 +33,17 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
+        {/* Web Pages  */}
         <Route exact path="/" component={HomeScreen} />
         <Route exact path="/news" component={NewsScreen} />
         <Route exact path="/news/:id" component={NewScreen} />
+        <Route exact path="/about-us" component={AboutUsScreen} />
+        
+        {/* Login Pages  */}
         <Route exact path="/login" component={LoginScreen} />
         <Route exact path="/register" component={RegisterScreen} />
+        
+        {/* Backoffice Pages */}
         <Route exact path="/backoffice" component={BackofficeScreen} />
       </Switch>
     </BrowserRouter>

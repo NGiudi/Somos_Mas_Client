@@ -9,7 +9,7 @@ export const Title = styled.h3`
   white-space: nowrap;
 `;
 
-export const Content = styled.p`
+export const Content = styled.div`
   display: -webkit-box;
   margin: .5rem 0;
   overflow: hidden;

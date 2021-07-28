@@ -7,8 +7,9 @@ import { useQuery } from 'react-query';
 import { Button, Center, Text } from '@chakra-ui/react';
 
 // import from local files.
-import { Grid, Rectangular, Section, SectionTitle } from './HomeStyles';
+import { Rectangular, Title } from '../../../assets/styles/globalStyles';
 import Card from '../../../components/WebPages/Card/Card';
+import { Grid, Section } from './HomeStyles';
 import PageLayout from '../PageLayout';
 
 // import services.
@@ -40,7 +41,7 @@ const Home = () => {
       
       {/* last news. */}
       <Section>
-        <SectionTitle>Novedades</SectionTitle>
+        <Title>Novedades</Title>
         <Rectangular/>
         
         { /* news section */
@@ -67,7 +68,7 @@ const Home = () => {
 
       {/* testimonials */}
       <Section>
-        <SectionTitle>Testimonios</SectionTitle>
+        <Title>Testimonios</Title>
         <Rectangular/>
       </Section>
     </PageLayout>

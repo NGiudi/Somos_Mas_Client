@@ -6,10 +6,12 @@ import { useQuery } from 'react-query';
 import { Center } from '@chakra-ui/react';
 
 // import from local files.
+import { Rectangular, Title } from '../../../assets/styles/globalStyles';
 import Pagination from '../../../components/Pagination/Pagination';
 import Card from '../../../components/WebPages/Card/Card';
-import { Grid, Rectangular, Title } from './NewsStyles';
 import PageLayout from '../PageLayout';
+import { Grid } from './NewsStyles';
+
 
 // import from services.
 import { getNewsData } from '../../../services/axios/queries/news'; 
