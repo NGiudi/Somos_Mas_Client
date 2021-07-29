@@ -6,7 +6,7 @@ export const Title = styled.h2`
   font-family: 'Truculenta', sans-serif;
   font-size: calc(2rem + 1vw);
   font- weight: bold;
-  margin-top: 3rem;
+  padding-top: 3rem;
   text-align: center;
 `;
 

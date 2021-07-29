@@ -6,7 +6,7 @@ import { FormControl, FormLabel, FormErrorMessage } from '@chakra-ui/react';
 import { Box, Button, Center, Input } from '@chakra-ui/react';
 import { Field, Formik, Form } from 'formik';
 
-// import from local files.
+// import services.
 import { registerValidation } from '../../../services/validations/registerValidation';
 import { RegisterContext } from '../../../contexts/registerContext';
 
