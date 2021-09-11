@@ -56,7 +56,7 @@ function AboutUs() {
             data.data.map(member =>{
               console.log(member);
               return (
-                <ImageBox  href={ member.linkedinURL } target="_blank" rel="noopener noreferrer">
+                <ImageBox key={member.id} href={ member.linkedinURL } target="_blank" rel="noopener noreferrer">
                   <Image boxSize="200px" src={member.imageURL} alt={member.imageAlt}/>
                   <TopLayer>
                     <MemberName>{ member.name }</MemberName>
