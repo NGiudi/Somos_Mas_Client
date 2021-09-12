@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { RED } from '../../../constants/colors';
+import styled from "styled-components";
+import { RED } from "../../../constants/colors";
 
 export const Header = styled.div`
   padding-bottom: 6rem;

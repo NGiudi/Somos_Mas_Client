@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { YELLOW } from '../../constants/colors';
+import { YELLOW } from "../../constants/colors";
 
 export const Title = styled.h2`
   font-family: 'Truculenta', sans-serif;

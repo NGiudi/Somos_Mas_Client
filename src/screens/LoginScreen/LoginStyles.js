@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { BG_WHITE } from '../../constants/colors';
+import { BG_WHITE } from "../../constants/colors";
 
 export const CenterForm = styled.div`
   display: flex;

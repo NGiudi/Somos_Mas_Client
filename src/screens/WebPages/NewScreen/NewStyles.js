@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Article = styled.article`
   margin: 0 auto 5rem auto;

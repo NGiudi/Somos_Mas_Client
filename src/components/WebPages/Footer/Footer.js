@@ -1,72 +1,72 @@
 // import from react.
-import React, { memo } from 'react';
-import { useSelector } from 'react-redux';
+import React, { memo } from "react";
+import { useSelector } from "react-redux";
 
 // import from externals libraries.
-import { Center, IconButton, Image, Text } from '@chakra-ui/react';
+import { Center, IconButton, Image, Text } from "@chakra-ui/react";
 
 //import from local files.
-import { Container, Flex, Icon, LinkDom, Nav } from './StylesFooter';
-import logo from '../../../assets/img/logo-somos-mas-blanco.png';
+import { Container, Flex, Icon, LinkDom, Nav } from "./StylesFooter";
+import logo from "../../../assets/img/logo-somos-mas-blanco.png";
 
 const Footer = () => {
-  const { facebook, instagram, linkedin } = useSelector((state) => state.organization);
+	const { facebook, instagram, linkedin } = useSelector((state) => state.organization);
 
-  return (
-    <Container>
-      <Nav>
-        <Flex>
-          <LinkDom to="/activities">
+	return (
+		<Container>
+			<Nav>
+				<Flex>
+					<LinkDom to="/activities">
             Actividades
-          </LinkDom>
+					</LinkDom>
 
-          <LinkDom to="/news">
+					<LinkDom to="/news">
             Novedades
-          </LinkDom>
-        </Flex>
+					</LinkDom>
+				</Flex>
 
-        <LinkDom to="/">
-          <Image src={logo} alt="logo somos más" w="120px" />
-        </LinkDom>
+				<LinkDom to="/">
+					<Image src={logo} alt="logo somos más" w="120px" />
+				</LinkDom>
 
-        <Flex>
-          <LinkDom to="/about-us">
+				<Flex>
+					<LinkDom to="/about-us">
             Nosotros
-          </LinkDom>
+					</LinkDom>
 
-          <LinkDom to="/contact">
+					<LinkDom to="/contact">
             Contacto
-          </LinkDom>
-        </Flex>
-      </Nav>
+					</LinkDom>
+				</Flex>
+			</Nav>
 
-      <Center mt="20px">
-        <a href={facebook} target="_blank" rel="noopener noreferrer">
-          <IconButton isRound="true" mx="10px">
-            <Icon className="fab fa-facebook" />
-          </IconButton>
-        </a>
+			<Center mt="20px">
+				<a href={facebook} target="_blank" rel="noopener noreferrer">
+					<IconButton isRound="true" mx="10px">
+						<Icon className="fab fa-facebook" />
+					</IconButton>
+				</a>
 
-        <a href={instagram} target="_blank" rel="noopener noreferrer">
-          <IconButton isRound="true" mx="10px">
-            <Icon className="fab fa-instagram" />
-          </IconButton>
-        </a>
+				<a href={instagram} target="_blank" rel="noopener noreferrer">
+					<IconButton isRound="true" mx="10px">
+						<Icon className="fab fa-instagram" />
+					</IconButton>
+				</a>
 
-        <a href={linkedin} target="_blank" rel="noopener noreferrer">
-          <IconButton isRound="true" mx="10px">
-            <Icon className="fab fa-linkedin-in" />
-          </IconButton>
-        </a>
-      </Center>
+				<a href={linkedin} target="_blank" rel="noopener noreferrer">
+					<IconButton isRound="true" mx="10px">
+						<Icon className="fab fa-linkedin-in" />
+					</IconButton>
+				</a>
+			</Center>
         
-      <Center mt="10px">
-        <Text as="small" textAlign="center" color="grey" fontSize="xs">
+			<Center mt="10px">
+				<Text as="small" textAlign="center" color="grey" fontSize="xs">
           2021 by Alkemy All Rights Reserved.
-        </Text>
-      </Center>
-    </Container>
-  );
+				</Text>
+			</Center>
+		</Container>
+	);
 };
 
 export default memo(Footer);

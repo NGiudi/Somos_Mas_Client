@@ -1,33 +1,33 @@
 // import from react.
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 // import local files.
-import MessagePage from '../WebPages/MessagePage/MessagePage';
+import MessagePage from "../WebPages/MessagePage/MessagePage";
 
 // import constants.
-import { BACKOFFICE_NO_PERMITION } from '../../constants/messagesPages';
-import { ROLE_ID_ADMIN } from '../../constants/numbers';
+import { BACKOFFICE_NO_PERMITION } from "../../constants/messagesPages";
+import { ROLE_ID_ADMIN } from "../../constants/numbers";
 
 function Backoffice() {
-  const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(true);
   
-  const { roleId } = useSelector(state => state.user);
+	const { roleId } = useSelector(state => state.user);
   
-  useEffect(() => {
-    // waiting for roleId to update.
-    setTimeout(() => setLoading(false), 1);
-  }, [])
+	useEffect(() => {
+		// waiting for roleId to update.
+		setTimeout(() => setLoading(false), 1);
+	}, []);
 
-  if(loading)
-    return null
+	if(loading)
+		return null;
 
-  if (roleId !== ROLE_ID_ADMIN)
-    return ( <MessagePage data={BACKOFFICE_NO_PERMITION}/> );
+	if (roleId !== ROLE_ID_ADMIN)
+		return ( <MessagePage data={BACKOFFICE_NO_PERMITION}/> );
   
-  return (
-    <p>estoy dentro</p>
-  );
+	return (
+		<p>estoy dentro</p>
+	);
 }
 
 export default Backoffice;
